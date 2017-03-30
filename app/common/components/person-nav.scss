@@ -1,0 +1,46 @@
+@import "~color";
+
+.person-nav-box {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  z-index: 1;
+}
+.person-nav {
+  display: flex;
+  align-items: center;
+  .person-nav-tab-box {
+    margin-right: 15px;
+
+    .nav-tab {
+      color: $lightgray;
+      font-size: 25px;
+    }
+  }
+
+  .ant-badge-dot {
+    height: 6px;
+    width: 6px;
+    border-width: 0;
+    left: 22px;
+    top: 1px;
+    box-shadow: 0 0 0 0;
+  }
+  .avatar {
+    position: relative;
+    padding: 5px 0;
+    >img{
+      height: 30px;
+      width: 30px;
+      border-radius: 15px;
+    }
+  }
+ .arrow-down {
+   position: absolute;
+   top: 18px;
+   right: -6px;
+   border-left: 5px solid transparent;
+   border-right: 5px solid transparent;
+   border-top: 5px solid #B2B2B2;
+ }
+}

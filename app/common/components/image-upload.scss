@@ -1,0 +1,46 @@
+@import "~color";
+
+.image-upload-wrap {
+  .image-upload {
+    display: inline-block;
+    div.ant-upload {
+      border: 1px dashed #d9d9d9;
+      width: 98px;
+      height: 98px;
+      border-radius: 6px;
+      text-align: center;
+      cursor: pointer;
+
+      img {
+        width: 96px;
+        height: 96px;
+      }
+
+      .iconfont {
+        margin-top: 24px;
+      }
+    }
+    .noImage {
+   	  display: none;
+   	}
+
+   	&:hover .noImage {
+   	  display: inline-block;
+   	  position: absolute;
+   	  top:0px;
+   	  left: 0px;
+   	  height: 98px;
+      width: 98px;
+   	  background-color: $white;
+   	  opacity: 0.7;
+   	}
+  }
+  .hint {
+    color: $color-text;
+    margin-left: 10px;
+    line-height: 20px;
+    display: inline-block;
+    position: absolute;
+    top: 0px;
+  }
+}

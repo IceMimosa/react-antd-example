@@ -1,0 +1,133 @@
+@import '~color';
+.ant-form-item {
+  &.parent-item {
+    margin-bottom: 0;
+  }
+}
+
+.ant-modal-body .ant-form-item {
+  margin-bottom: 15px;
+}
+
+.ant-progress-bg {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-left-radius: 100px;
+  border-bottom-left-radius: 100px;
+}
+
+.ant-form-item>label:after {
+  content: ":";
+  margin: 0 8px 0 2px;
+  position: relative;
+  top: -.5px;
+}
+
+.ant-confirm {
+  .ant-confirm-body {
+    .anticon {
+      font-size: 20px;
+      margin-right: 10px;
+      padding: 0 1px;
+      position: relative;
+      top: 3px;
+    }
+  }
+}
+
+.vertical-center-modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vertical-center-modal .ant-modal {
+  top: 0;
+}
+
+.ant-confirm .ant-confirm-body .ant-confirm-title {
+  font-size: 14px;
+  color: #464c57;
+  line-height: 14px;
+  font-weight: normal;
+}
+
+.ant-modal-header {
+  border-bottom: none;
+}
+
+.ant-modal-footer {
+  border-top: none;
+}
+
+.ant-table {
+  >.ant-table-scroll {
+    border: 1px solid $dark;
+    border-radius: 6px;
+    .ant-table-body {
+      border-radius: 0px 0px 6px 6px;
+    }
+  }
+  table {
+    border: 1px solid $dark;
+    border-radius: 6px;
+  }
+  th,
+  td {
+    padding: 20px;
+  }
+  td {
+    background-color: $white;
+    border-bottom: none;
+    border-top: 1px solid $dark;
+    &:last-child {
+      text-align: left;
+    }
+  }
+  .ant-table-row:hover td {
+    background-color: #F3FAFD;
+  }
+}
+
+.ant-table-thead {
+  th {
+    font-weight: normal;
+    color: $color-text-assist;
+    background-color: #e8e8e8;
+    &:last-child {
+      text-align: left;
+    }
+  }
+}
+
+.ant-collapse {
+  border-radius: 6px;
+  >.ant-collapse-item {
+    &:last-child {
+      >.ant-collapse-header,
+      >.ant-collapse-content {
+        border-radius: 0px 0px 6px 6px;
+      }
+    }
+    &:first-child {
+      >.ant-collapse-header {
+        border-radius: 6px;
+      }
+    }
+    >.ant-collapse-header {
+      background-color: $white;
+    }
+  }
+}
+
+.ant-btn {
+  font-weight: normal;
+  >i {
+    color: $color-primary;
+  }
+  &.ant-btn-primary {
+    >i {
+      color: $white;
+    }
+  }
+}

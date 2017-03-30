@@ -1,0 +1,80 @@
+@import "~color";
+
+.tabs {
+  overflow: hidden;
+
+  .tabs-tab {
+    display: inline-block;
+    text-align: center;
+    font-size: 12px;
+    cursor: pointer;
+    color: $color-text-assist;
+
+    > a {
+      color: $color-text-assist;
+    }
+
+    &.active, &.active > a {
+      color: $color-text-primary;
+    }
+
+    .arrow-up {
+      display: none;
+    }
+  }
+
+  .tabs-project {
+    font-size: 14px;
+    color: $color-text-primary;
+    line-height: 14px;
+    margin-right: 20px;
+  }
+}
+
+.tabs.tabs-arrow {
+  margin-bottom: 0;
+
+  .tabs-tab {
+    margin-bottom: 24px;
+    position: relative;
+
+    &.active {
+      color: $color-text-primary;
+    }
+  }
+}
+
+.tabs-content {
+
+  .tabs-tabpane {
+    display: none;
+
+    &.active {
+      display: block;
+    }
+  }
+}
+
+.tabs-wrap {
+  .back-icon {
+    font-size: 20px;
+    color: $color-text-secondary;
+    margin-top: -5px;
+    margin-right: 10px;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .env-span {
+    position: relative;
+    left: -10px;
+  }
+}
+.tab-unit{
+  display: inline-block;
+  margin-left: 20px;
+}
+.horizontal-line {
+  display: inline;
+  border-left: 1px solid $color-border;
+}

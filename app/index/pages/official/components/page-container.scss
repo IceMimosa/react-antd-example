@@ -1,0 +1,31 @@
+.official-console {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+
+  .console-body {
+    display: flex;
+    flex: 3;
+  }
+
+  .console-header {
+    height: 80px;
+  }
+
+  .content {
+    background-color: #f5f5f5;
+    flex: 1;
+    position: relative;
+
+    .main {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      overflow: auto;
+      width: 1200px;
+      margin: 0 auto;
+    }
+  }
+}

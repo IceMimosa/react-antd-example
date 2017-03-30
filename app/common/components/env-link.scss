@@ -1,0 +1,46 @@
+@import "~color";
+
+.env-link-box {
+  display: inline-block;
+  color: $color-primary;
+  margin-left: 10px;
+  &:hover {
+    cursor: pointer;
+  }
+  .arrow {
+    display: block;
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px solid $lightgray;
+    margin: auto 10px auto 10px;
+  }
+  .env-title {
+    display: flex;
+  }
+}
+
+.env-select {
+  padding-right: 34px;
+  padding-left: 20px;
+}
+
+.env-unit {
+  .iconfont {
+    margin-right: 10px;
+  }
+  &:hover {
+    color: $color-primary;
+  }
+  >i {
+    font-size: 12px;
+  }
+}
+
+.ant-dropdown-menu-item-active {
+  background-color: $white;
+  &:hover {
+    color: $color-primary;
+  }
+}

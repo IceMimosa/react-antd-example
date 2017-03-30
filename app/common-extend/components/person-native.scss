@@ -1,0 +1,49 @@
+@import "~color";
+
+@mixin border {
+  height: 49px;
+  padding: 14px 0 0 15px;
+  border-left: 1px solid $dark;
+}
+
+.person-native-box {
+  position: absolute;
+  right: 0;
+}
+.person-native {
+  height: 49px;
+  display: flex;
+  align-items: center;
+  .info {
+    @include border
+  }
+  .native-tab {
+    margin-right: 15px;
+    color: $lightgray;
+    font-size: 25px;
+  }
+  .avator {
+    height: 49px;
+    padding: 0 0 0 10px;
+    border-left: 1px solid $dark;
+    position: relative;
+    display: flex;
+    align-items: center;
+    >img{
+      height: 30px;
+      width: 30px;
+      margin:0 10px 0 0;
+    }
+  }
+ .arrow-down {
+  position: absolute;
+  right: 3px;
+  top: 40px;
+  width: 0;
+  height: 0;
+  border-top: 3px solid transparent;
+  border-left: 3px solid transparent;
+  border-right: 3px solid #B2B2B2;
+  border-bottom: 3px solid #B2B2B2;
+ }
+}

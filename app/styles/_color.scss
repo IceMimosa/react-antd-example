@@ -1,0 +1,61 @@
+// Color palette
+$green: #00D19C;
+$blue: #2db7f5;
+$lightblue: #1EB6F8;
+$purple: #AE8FE5;
+$orange: #FBA254;
+$red: #F75B60;
+$navy: #333;
+$gray: #666;
+$darkgray: #999;
+$lightgray: #bbb;
+$white: #FFF;
+$darkblue: #2374e1 !default;
+$dark: #DFDFDF !default;
+
+// Color primary
+$color-primary: $blue;
+$color-secondary: $gray;
+
+// Color text
+$color-text-primary: $navy;
+$color-text: $gray;
+$color-text-assist: $darkgray;
+$color-text-secondary: $lightgray;
+$color-text-secondary-assist: $darkgray !default;
+
+// Color link
+$color-link: $blue;
+$color-link-assist: $navy;
+$color-link-secondary: $lightgray;
+
+// Color status
+$color-success: $green;
+$color-danger: $red;
+$color-warning: $orange;
+$color-info: $gray;
+
+// color decorator
+$color-background: #EFF2F0;
+$color-border: #E8E8E8;
+$color-shadow: rgba(232, 232, 232, 0.5);
+$color-background-assist: rgba(239, 242, 240, 0.4);
+$color-hover: #FFFEEB;
+$color-gradient-start: #0CDEA9;
+$color-gradient-end: #1EB6F8;
+$color-border-second: $lightblue;
+
+// color special for horus
+$color-background-log: #f7f7f7;
+$color-background-content: #f5f5f5;
+$color-background-edit: #fbfbfb;
+$color-background-light: #F3FAFD;
+$color-grey-text: #ABB2BF;
+$color-background-menu: #e6f8ff;
+
+// color special for horus data-develop
+$border: #e1e1e1;
+$background: #fafafa;
+$tab-background: #f3f3f3;
+$icon-background: #0fd9b2;
+

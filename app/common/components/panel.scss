@@ -1,0 +1,17 @@
+@import "~color";
+
+.panel {
+  .panel-title {
+    display: block;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: $color-text-assist;
+  }
+
+  .panel-body {
+    border-radius: 6px;
+    background-color: $white;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+}

@@ -1,0 +1,21 @@
+@import "~color";
+
+.user-manage-list {
+  .users-search-btn {
+    margin-top: -1px;
+  }
+  .users-add-btn {
+    background: $white;
+    height: 28px;
+    margin-top: 3px;
+  }
+  .users-flex {
+    display: flex;
+    justify-content: space-between;
+    background-color: $white;
+    border: 1px solid $color-border;
+    border-radius: 6px;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+}

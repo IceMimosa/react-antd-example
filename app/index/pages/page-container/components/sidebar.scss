@@ -1,0 +1,131 @@
+@import "~color";
+
+.console-sidebar {
+  width: 180px;
+  background: #282828;
+
+  .logo-box {
+    height: 60px;
+    background-color: #282828;
+    border-bottom: 1px solid #181818;
+    position: relative;
+
+    .logo {
+      display: inline-block;
+      height: 20px;
+      background: url("/images/logo_reverse.png") no-repeat;
+      background-size: auto 20px;
+      margin: 20px 28px;
+
+      &.logo-haier {
+        background: url("/images/logo_haier_reverse.png") no-repeat;
+        background-size: auto 20px;
+      }
+    }
+    .sidebar-switch {
+      position: absolute;
+      right: 0;
+      top: 0;
+      font-size: 14px;
+      bottom: 0;
+      width: 30px;
+      padding-top: 24px;
+      cursor: pointer;
+
+      &:hover {
+        background: #181818;
+      }
+    }
+  }
+  &.active {
+
+    .sidebar-menu-item-text {
+      display: none;
+    }
+  }
+}
+
+.sidebar-menu {
+  background: #282828;
+  border: none;
+
+  .sidebar-menu-item {
+    height: 60px;
+    padding-left: 28px;
+
+    a {
+      display: block;
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.5);
+      line-height: 14px;
+      padding: 18px 0;
+    }
+    .sidebar-menu-item-text {
+      display: inline-block;
+      margin-left: 28px;
+    }
+    .sidebar-icon {
+      vertical-align: middle;
+      display: inline-block;
+      line-height: 1;
+      width: 24px;
+      height: 24px;
+      background: url("/images/sidebar/sidebar_sprite.png") no-repeat;
+      background-size: auto 24px;
+      opacity: 0.6;
+
+      &.source {
+        background-position: 0 0;
+      }
+      &.market {
+        background-position: -24px 0;
+      }
+      &.analysis {
+        background-position: -144px 0;
+      }
+      &.task {
+        background-position: -264px 0;
+      }
+      &.user {
+        background-position: -168px 0;
+      }
+      &.power {
+        background-position: -192px 0;
+      }
+      &.file {
+        background-position: -240px 0;
+      }
+      &.develop {
+        background-position: -24px 0;
+      }
+      &.operation {
+        background-position: -72px 0;
+      }
+    }
+  }
+  &.ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
+    background: #181818;
+
+    .sidebar-icon {
+      opacity: 1;
+    }
+    a {
+      color: $white;
+    }
+  }
+  .ant-menu-item-active {
+    background: #181818;
+
+    .sidebar-icon {
+      opacity: 1;
+    }
+    a {
+      color: $white;
+    }
+  }
+
+  .ant-menu-item{
+    border-right: none;
+    left:0;
+  }
+}

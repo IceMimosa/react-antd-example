@@ -1,0 +1,126 @@
+@import "~color";
+.common-search {
+  background-color: $white;
+  min-width: 230px;
+  width: 25%;
+  display: inline-block;
+  padding: 20px;
+  border-radius: 5px;
+  .title-name {
+    color: $gray;
+  }
+  .title-name-second {
+    padding: 10px 0px;
+  }
+  .ant-select {
+    width: 100%;
+  }
+}
+
+.common-content,
+.common-content-out,
+.common-content-big,
+.common-content-search {
+  display: inline-block;
+  background-color: $white;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.common-content-big,
+.common-content-search {
+  width: 100%;
+  min-width: 800px;
+  .content-title {
+    position: relative;
+    .search-input {
+      position: absolute;
+      top: 0px;
+      right: 10px;
+      width: 200px;
+      display: inline-block;
+    }
+  }
+}
+
+.common-content,
+.common-content-out {
+  min-width: 700px;
+  position: absolute;
+}
+
+//多个并列子元素
+.common-content {
+  width: 73%;
+  padding: 0px 0px 0px 20px;
+  background-color: $color-background-content;
+}
+
+//单个子元素
+.common-content-out {
+  width: 71%;
+  margin-left: 20px;
+}
+
+.common-content-big {
+  .ant-tabs-mini .ant-tabs-tab {
+    padding-left: 0px;
+  }
+  .content-title {
+    .ant-tabs-bar {
+      border-bottom: 0px;
+      .ant-tabs-ink-bar {
+        background-color: initial;
+      }
+    }
+  }
+}
+
+.common-content-search {
+  .ant-table {
+    margin-top: 48px;
+  }
+}
+
+.search-input {
+  position: relative;
+  .anticon.anticon-search {
+    position: absolute;
+    left: 6px;
+    z-index: 1;
+    top: 10px;
+    color: $color-border;
+  }
+  .ant-input {
+    width: 100%;
+    padding-left: 20px;
+  }
+}
+
+//搜索框样式
+.search-input-normal {
+  .anticon.anticon-search {
+    top: 9px;
+  }
+}
+
+.common-title {
+  position: relative;
+  height: 40px;
+  margin-bottom: 10px;
+  .ant-btn {
+    margin-left: 8px;
+  }
+  .left {
+    display: inline-block;
+    .search-input {
+      width: 200px;
+      display: inline-block;
+    }
+  }
+  .right {
+    position: absolute;
+    right: 10px;
+    top: 2px;
+  }
+}

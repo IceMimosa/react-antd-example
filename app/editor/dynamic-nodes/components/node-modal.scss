@@ -1,0 +1,29 @@
+
+.node-modal {
+  .path {
+    position: relative;
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}
+
+.muti {
+  margin-bottom: 0px;
+  .muti-group {
+    margin-top: 10px;
+    &:first-child {
+      margin-top: 0px;
+    }
+  }
+}
+
+.center {
+  text-align: center;
+  .anticon {
+    cursor: pointer;
+    margin-left: -10%;
+  }
+}

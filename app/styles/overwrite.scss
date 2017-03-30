@@ -1,0 +1,34 @@
+/*
+  圆角样式重置
+*/
+// modal
+.ant-modal-header {
+  border-radius: 2px 2px 0 0;
+}
+.ant-modal-content {
+  border-radius: 2px;
+}
+.ant-modal-footer {
+  border-radius: 0 0 4px 4px
+}
+
+// button
+.ant-btn-lg, .ant-btn {
+  border-radius: 2px;
+}
+
+// input, checkbox, select
+.ant-input, .ant-checkbox-inner, .ant-select-selection {
+  border-radius: 2px;
+}
+
+// radio
+.ant-radio-button-wrapper {
+  &:first-child {
+    border-radius: 2px 0 0 2px;
+  }
+  &:last-child {
+    border-radius: 0 2px 2px 0;
+  }
+}
+

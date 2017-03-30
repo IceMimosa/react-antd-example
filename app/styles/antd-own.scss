@@ -1,0 +1,68 @@
+@import '~color';
+//清除tab的border
+.ant-tabs.ant-tabs-card>.ant-tabs-bar .ant-tabs-tab {
+  border: 0px;
+}
+
+.ant-tabs-bar {
+  border: 0px;
+}
+
+.common-content-big {
+  .ant-tabs-tab-inner {
+    font-size: 14px;
+  }
+}
+
+//搜索框右方有操作按钮
+.with-table-operator {
+  position: absolute;
+  right: 10px;
+  top: 0;
+  .search-input {
+    position: relative !important;
+  }
+}
+
+// 覆盖进度条样式
+.schedule-overwrite {
+  position: relative;
+  .ant-progress-inner {
+    width: 100px;
+  }
+  .ant-progress-bg {
+    height: 21px !important;
+  }
+  .ant-progress-text {
+    position: absolute;
+    color: $white;
+    left: 4px;
+    line-height: 21px;
+  }
+}
+
+.ant-table table {
+  border: 0px;
+  .ant-table-thead>tr>th:last-child {
+    text-align: right;
+    padding-right: 20px;
+  }
+  .ant-table-tbody>tr {
+    &:nth-child(2n) {
+      td {
+        background-color: $color-background-edit;
+      }
+    }
+    td {
+      border: 0px;
+      &:last-child {
+        text-align: right;
+        padding-right: 20px;
+      }
+    }
+  }
+}
+
+.ant-modal-title {
+  font-weight: 200;
+}

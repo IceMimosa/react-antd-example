@@ -1,0 +1,82 @@
+@import "~color";
+
+.console {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+
+  .console-body {
+    display: flex;
+    flex: 3;
+
+    .console-sidebar {
+      position: relative;
+
+      .console-sidebar-body {
+        position: absolute;
+        top: 60px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        overflow: auto;
+      }
+    }
+  }
+
+  .console-header {
+    height: 80px;
+  }
+
+  .content {
+    background-color: #f5f5f5;
+    flex: 1;
+    position: relative;
+
+    .main {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      overflow: auto;
+    }
+    .source-container,
+    .tag-container,
+    .data-map-container,
+    .data-quality-container,
+    .edit-sql-container,
+    .history-query-container,
+    .my-query-container,
+    .relation-ship-container,
+    .save-query-container,
+    .task-report-container,
+    .task-index-container,
+    .task-detail-container,
+    .task-child-container,
+    .task-fast-container,
+    .task-edit-container,
+    .file-list-container,
+    .user-data-container,
+    .org-member-manage-container,
+    .manage-list-container,
+    .safe-level-container
+    {
+      padding: 20px 20px 0;
+    }
+
+    .top-tab {
+      height: 50px;
+      border-bottom: 1px solid $dark;
+      .tabs-wrap{
+        padding: 0 20px;
+        margin-bottom: 0px;
+        line-height: 50px;
+        height: 50px;
+
+        .tabs-tab.active {
+          color: $color-gradient-end;
+        }
+      }
+    }
+  }
+}

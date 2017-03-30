@@ -1,0 +1,18 @@
+@import '~color';
+
+.left-col {
+  height: 100%;
+  width: 320px;
+  background: $background;
+  float: left;
+  flex: 0 0 auto;
+}
+
+.right-col {
+  display: flex;
+  height: 100%;
+  position: relative;
+  min-height: 500px;
+  background: $white;
+  border-left: 1px solid #e1e1e1;
+}

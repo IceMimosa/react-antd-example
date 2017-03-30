@@ -1,0 +1,61 @@
+@import "~color";
+
+.progress-line {
+  position: relative;
+  width: 100%;
+  font-size: 12px;
+
+  .progress-outer, .progress-text {
+    display: inline-block;
+  }
+  .progress-outer {
+    padding-right: 45px;
+    margin-right: -45px;
+    width: 100%;
+
+    .progress-inner {
+      display: inline-block;
+      width: 100%;
+      background-color: #dfdfdf;
+      border-radius: 100px;
+      vertical-align: middle;
+      font-size: 0;
+      line-height: 0;
+
+      .progress-bg {
+        border-top-left-radius: 100px;
+        border-bottom-left-radius: 100px;
+        background-color: #2db7f5;
+        -webkit-transition: all .3s linear 0s;
+        transition: all .3s linear 0s;
+        position: relative;
+        height: 10px;
+        display: inline-block;
+      }
+
+      .progress-append {
+        display: inline-block;
+        background-color: #77d7ff;
+        height: 10px;
+      }
+
+      .progress-full {
+        border-top-right-radius: 100px;
+        border-bottom-right-radius: 100px;
+      }
+      .progress-left-full {
+        border-top-left-radius: 100px;
+        border-bottom-left-radius: 100px;
+      }
+    }
+
+  }
+  .progress-text {
+    width: 35px;
+    margin-left: 10px;
+    vertical-align: middle;
+    font-size: 1em;
+    font-family: tahoma;
+    color: $color-text-assist;
+  }
+}

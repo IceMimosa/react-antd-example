@@ -1,0 +1,56 @@
+@import '~color';
+
+.wrap-folder {
+  width: 640px !important;
+  .ant-modal-title {
+    margin: 0px 0px 0px 20px;
+  }
+  .ant-modal-body {
+    padding-top: 10px;
+  }
+  .ant-modal-header {
+    padding-top: 30px;
+  }
+  .ant-modal-close {
+    top: 30px;
+  }
+  .has-error .ant-form-explain {
+    padding-left: 20px;
+  }
+  .ant-tree li {
+    margin: 0px;
+    a.ant-tree-node-selected {
+      background-color: transparent;
+      .file-name {
+        color: $blue;
+      }
+    }
+    .file-name {
+      color: $lightgray;
+      .iconfont {
+        margin-right: 10px;
+      }
+    }
+    span.ant-tree-switcher.ant-tree-roots_close:after,
+    span.ant-tree-switcher.ant-tree-center_close:after,
+    span.ant-tree-switcher.ant-tree-bottom_close:after,
+    span.ant-tree-switcher.ant-tree-noline_close:after,
+    span.ant-tree-switcher.ant-tree-roots_open:after,
+    span.ant-tree-switcher.ant-tree-center_open:after,
+    span.ant-tree-switcher.ant-tree-bottom_open:after,
+    span.ant-tree-switcher.ant-tree-noline_open:after {
+      content: "\E606";
+      color: $gray;
+      font-size: 16px;
+    }
+  }
+  .folder-content {
+    width: 560px;
+    height: 250px;
+    overflow: auto;
+    border: 1px solid $dark;
+    margin: 0px 20px;
+    border-radius: 5px;
+    padding-left: 10px;
+  }
+}

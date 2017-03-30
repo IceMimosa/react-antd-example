@@ -1,0 +1,18 @@
+@import '~color';
+.context-menu {
+  width: 140px;
+  position: absolute;
+  border: 1px solid $color-border;
+  background-color: $white;
+  li {
+    height: 28px;
+    line-height: 28px;
+    padding-left: 10px;
+    > a {
+      color: rgba(0, 0, 0, 0.65);
+    }
+    &:hover {
+      background-color: $color-background-menu;
+    }
+  }
+}
