@@ -1,43 +1,31 @@
 @import '~color';
 
 .login-box {
-  background-color: $white;
-  border-radius: 10px;
+  background-color: rgba(50,50,50,0.6);
   box-sizing: border-box;
   width: 420px;
   margin: 0 auto;
   text-align: center;
-
-  .login-title {
-    padding: 50px 20px 40px;
-    font-size: 16px;
-    position: relative;
-  }
-  .login-title-link {
-    position: absolute;
-    right: 20px;
-    font-size: 12px;
-    color: $lightgray;
-  }
-  .submit-link {
-    display: block;
-    font-size: 16px;
-    text-align: center;
-    color: $white;
-    background-color: #00a9ff;
-    background-image:linear-gradient(-225deg, #00a9ff 0%, #00c6ff 100%);
-    border-radius: 0 0 10px 10px;
-    padding: 33px 0;
-    margin-top: 50px;
+  //修改login的tab样式
+  .ant-tabs-nav{
+    width: 100%;
+    .ant-tabs-ink-bar {
+      background: #fff;
+    }
+    .ant-tabs-tab {
+      width: 50%;
+      color: #fff;
+      padding: 10px 0;
+      margin-right: 0;
+    }
   }
 
   .login-form {
-    border-top: 1px solid $dark;
-    border-bottom: 1px solid $dark;
-    background-color: #f3fafd;
+    background-color: #fff;
+    margin: 40px 40px 40px 40px;
 
     .login-form-item {
-      padding: 26px 20px 26px 65px;
+      padding: 10px 10px 8px 45px;
       position: relative;
 
       .ant-form-item-control {
@@ -53,10 +41,10 @@
       }
     }
     .item-icon {
-      font-size: 26px;
+      font-size: 16px;
       line-height: 26px;
       position: absolute;
-      left: 20px;
+      left: 10px;
     }
     .item-input-wrap {
       margin-bottom: 0;

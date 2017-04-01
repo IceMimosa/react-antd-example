@@ -1,20 +1,26 @@
-import { Form, Input, Icon, message } from 'antd';
+import * as React from 'react';
+import { Form, Input, Icon, Tabs } from 'antd';
 import { Icon as CustomIcon } from 'common';
 import { Link } from 'react-router';
-import * as React from 'react';
-const FormItem = Form.Item;
 import './login-box.scss';
 
+const FormItem = Form.Item;
+const TabPane = Tabs.TabPane;
+
 const loginFields = {
-  terminus: {
+  phone: {
     desc: '手机号',
     icon: 'phone',
   },
+  user: {
+    desc: '用户名',
+    icon: 'username',
+  },
 };
 
-let LoginForm = ({ enterLogin, form }) => {
+let LoginForm = ({ enterLogin, form, loginType }) => {
   const { getFieldDecorator } = form;
-  const fieldMeta =loginFields[window._profile_] ||loginFields.terminus;
+  const fieldMeta = loginFields[loginType];
 
   return (
     <Form horizontal className='login-form'>
@@ -26,7 +32,6 @@ let LoginForm = ({ enterLogin, form }) => {
           })(<Input type='text' size='default' className='item-input'  placeholder={`输入${fieldMeta.desc}`} onPressEnter={enterLogin}/>)}
         </FormItem>
       </div>
-      <div className='login-form-item-separater' />
       <div className='login-form-item'>
         <CustomIcon type='lock' className='item-icon'/>
         <FormItem className='item-input-wrap'>
@@ -42,7 +47,9 @@ let LoginForm = ({ enterLogin, form }) => {
 LoginForm = Form.create()(LoginForm);
 
 class LoginBox extends React.Component {
-
+  state={
+    loginType: 'phone',
+  };
   onLoginClick() {
     const { onLoginSubmit } = this.props;
     this.refs.form.validateFields((err, values) => {
@@ -50,31 +57,18 @@ class LoginBox extends React.Component {
       onLoginSubmit(values);
     });
   }
-
+  changeLogin(key) {
+    this.setState({ loginType: key });
+  }
   render() {
-    const { loginUser, onLogout } = this.props;
-    if (!_.isEmpty(loginUser)) {
-      return (
-        <div className='login-box'>
-          <div className='login-title'>
-            欢迎回来
-          </div>
-          <div className='login-info'>
-            <div className='login-user-nick'>{_.isEmpty(loginUser.nick) ? loginUser.email : loginUser.nick}</div>
-            <a className='logout-link' onClick={onLogout}><Icon type='logout'/> 登出</a>
-          </div>
-          <Link to='/console' className='submit-link'>进入控制台</Link>
-        </div>
-      );
-    }
-
+    const { loginType } = this.state;
     return (
       <div className='login-box'>
-        <div className='login-title'>
-          登录
-          <a className='login-title-link' onClick={() => { message.warning('暂未开放'); }}>注册</a>
-        </div>
-        <LoginForm ref='form' enterLogin={::this.onLoginClick}/>
+        <Tabs defaultActiveKey='phone' onChange={::this.changeLogin}>
+          <TabPane tab='手机账号登录' key='phone'></TabPane>
+          <TabPane tab='网站账号登录' key='user'></TabPane>
+        </Tabs>
+        <LoginForm ref='form' enterLogin={::this.onLoginClick} loginType={loginType}/>
         <a className='submit-link' onClick={::this.onLoginClick}>立即登录</a>
       </div>
     );
