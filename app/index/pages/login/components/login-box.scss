@@ -3,9 +3,25 @@
 .login-box {
   background-color: rgba(50,50,50,0.6);
   box-sizing: border-box;
-  width: 420px;
+  width: 320px;
   margin: 0 auto;
   text-align: center;
+  button {
+    width: calc(100% - 80px);
+    height: 30px;
+    margin: 0 40px 20px 40px;
+    color: #fff;
+    border: none;
+    background: rgba(70,175,95,0.9);
+  }
+  .register-button {
+    background: rgba(61,139,226,0.9);
+    margin-bottom: 30px;
+    &:hover{
+      background: #fff;
+      color: #1eb6f8;
+    }
+  }
   //修改login的tab样式
   .ant-tabs-nav{
     width: 100%;
@@ -18,6 +34,11 @@
       padding: 10px 0;
       margin-right: 0;
     }
+  }
+
+  //
+  .ant-form-explain {
+    top: 16px !important;
   }
 
   .login-form {
@@ -62,37 +83,6 @@
     .login-form-item-separater {
       margin-left: 65px;
       border-top: 1px solid $dark;
-    }
-  }
-
-  .login-info {
-    position: relative;
-  }
-
-  .login-user-nick {
-    font-size: 24px;
-  }
-
-  .logout-link {
-    position: absolute;
-    top: 0;
-    right: 20px;
-  }
-
-  .form-content {
-    padding: 20px 0;
-
-    label {
-      color: $white;
-      margin-right: 10px;
-    }
-  }
-  .login-button {
-    padding: 10px 0;
-    border-top: 1px solid $white;
-
-    .btn {
-      width: 150px;
     }
   }
 }

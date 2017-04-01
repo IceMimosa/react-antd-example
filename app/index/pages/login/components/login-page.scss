@@ -2,9 +2,8 @@
 
 .index-page {
   height: 100%;
-  background: url("/images/index_bg.png") no-repeat;
-  background-color: #3E4652;
-
+  background: url("/images/index_bg.jpg") no-repeat;
+  background-size:100% 100%;
   .login-box {
     margin-top: 100px;
   }
@@ -12,6 +11,7 @@
 
 .index-header {
   width: 100%;
+  background-color: rgba(50,50,50,0.6);
 
   .logo {
     position: absolute;
@@ -23,10 +23,6 @@
 
     background: url("/images/logo_reverse.png") no-repeat;
     background-size: auto 25px;
-
-    &.logo-haier {
-      background-image: url("/images/logo_haier_reverse.png");
-    }
   }
 
   .header-nav {

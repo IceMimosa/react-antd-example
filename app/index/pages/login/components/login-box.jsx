@@ -1,7 +1,6 @@
 import * as React from 'react';
-import { Form, Input, Icon, Tabs } from 'antd';
+import { Form, Input, Tabs, Button } from 'antd';
 import { Icon as CustomIcon } from 'common';
-import { Link } from 'react-router';
 import './login-box.scss';
 
 const FormItem = Form.Item;
@@ -14,7 +13,7 @@ const loginFields = {
   },
   user: {
     desc: '用户名',
-    icon: 'username',
+    icon: 'yonghuming',
   },
 };
 
@@ -33,7 +32,7 @@ let LoginForm = ({ enterLogin, form, loginType }) => {
         </FormItem>
       </div>
       <div className='login-form-item'>
-        <CustomIcon type='lock' className='item-icon'/>
+        <CustomIcon type='mima' className='item-icon'/>
         <FormItem className='item-input-wrap'>
           {getFieldDecorator('password', {
             rules: [{ required: true, message: '请输入密码' }],
@@ -69,7 +68,8 @@ class LoginBox extends React.Component {
           <TabPane tab='网站账号登录' key='user'></TabPane>
         </Tabs>
         <LoginForm ref='form' enterLogin={::this.onLoginClick} loginType={loginType}/>
-        <a className='submit-link' onClick={::this.onLoginClick}>立即登录</a>
+        <Button className='login-button' onClick={::this.onLoginClick}>登录</Button>
+        <Button className='register-button' onClick={::this.onLoginClick}>创建我的Abstergo账号</Button>
       </div>
     );
   }

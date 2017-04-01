@@ -5,7 +5,7 @@ import './login-page.scss';
 const Header = () => (
   <header className='index-header'>
     <div className='index-wrapper'>
-      <div className={`logo logo-${window._profile_}`}></div>
+      {/*<div className={`logo logo-${window._profile_}`}></div>*/}
       <ul className='header-nav'>
         <li>
           <a href='#'>首页</a>
