@@ -7,9 +7,10 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "rm -rf public && webpack --progress --color -w -d",
+    "watch": "rm -rf public && webpack-dashboard -c blue -- webpack --progress --color -w -d",
+    "watch:server": "rm -rf public && babel-node bin/server.js",
     "analysis": "webpack --progress -p --json --profile > analysis.json",
-    "build": "rm -rf public  && cross-env NODE_ENV=production webpack --progress --color -p"
+    "build": "rm -rf public && cross-env NODE_ENV=production webpack --progress --color -p"
   },
   "author": "Example",
   "license": "ISC",
@@ -35,12 +36,12 @@
     "superagent": "^2.3.0",
     "superagent-use": "^0.1.0",
     "title-notify": "^1.0.12",
-    "vis-network-custom": "^0.0.8",
     "holderjs": "2.9.4",
     "react-watermark": "^0.0.3"
   },
   "devDependencies": {
     "autoprefixer": "^6.5.3",
+    "babel-cli": "^6.16.0",
     "babel-core": "^6.18.2",
     "babel-eslint": "^7.1.0",
     "babel-loader": "^6.2.7",
@@ -50,6 +51,7 @@
     "babel-register": "^6.18.0",
     "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.25.0",
+    "debug": "^2.6.3",
     "eslint": "^3.10.0",
     "eslint-config-airbnb": "^13.0.0",
     "eslint-plugin-import": "^2.2.0",
@@ -70,7 +72,15 @@
     "cross-env": "^3.1.4",
     "webpack-visualizer-plugin": "^0.1.8",
     "webpack-uglify-parallel": "^0.1.3",
-    "ignore-loader": "^0.1.2"
+    "ignore-loader": "^0.1.2",
+    "koa": "^2.2.0",
+    "koa-connect-history-api-fallback": "^0.3.1",
+    "koa-convert": "^1.2.0",
+    "koa-proxy": "^0.8.0",
+    "koa-static": "^3.0.0",
+    "koa-webpack-dev-middleware": "^1.4.5",
+    "koa-webpack-hot-middleware": "^1.0.3",
+    "webpack-dashboard": "^0.3.0"
   },
   "theme": {
     "@primary-color": "#1eb6f8",

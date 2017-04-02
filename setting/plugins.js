@@ -5,6 +5,7 @@ const HappyPack = require('happypack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const Visualizer = require('webpack-visualizer-plugin');
 const UglifyJsParallelPlugin = require('webpack-uglify-parallel');
+const DashboardPlugin = require('webpack-dashboard/plugin');
 const os = require('os');
 
 const production = process.env.NODE_ENV === 'production';
@@ -36,6 +37,7 @@ const watchPlugins = [
   new Visualizer({
     filename: './statistics.html',
   }),
+  new DashboardPlugin()
 ];
 
 const buildPlugins = [

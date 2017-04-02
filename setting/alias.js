@@ -21,7 +21,6 @@ const getAlias = (path, __dirname) => {
     index: path.join(__dirname, './app/index'),
     scripts: path.join(__dirname, './app/scripts'),
     'user': path.join(__dirname, './app/user'),
-    'vis-network': path.join(__dirname, './node_modules/vis-network-custom/public/vis-network.min.js'),
   };
 
   const buildAlias = {
