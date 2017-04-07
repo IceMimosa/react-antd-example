@@ -11,10 +11,10 @@ import proxy from 'koa-proxy';
 import historyApiFallback from 'koa-connect-history-api-fallback';
 import webpackDevMiddleware from 'koa-webpack-dev-middleware';
 import webpackHotMiddleware from 'koa-webpack-hot-middleware';
-import _debug from 'debug';
+import _util from '../setting/util';
 import _webpackConfig from '../webpack.config';
 
-const app = Koa()
-const debug = _debug('app:server');
-const webpackConfig = _webpackConfig(null, process)
-
+// 获取基本配置
+const app = new Koa();
+const webpackConfig = _webpackConfig(null, process);
+const settings = _util.settings;
