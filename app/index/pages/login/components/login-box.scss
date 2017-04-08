@@ -3,7 +3,7 @@
 .login-box {
   background-color: rgba(50,50,50,0.6);
   box-sizing: border-box;
-  width: 320px;
+  width: 360px;
   margin: 0 auto;
   text-align: center;
   button {
@@ -42,7 +42,6 @@
   }
 
   .login-form {
-    background-color: #fff;
     margin: 40px 40px 40px 40px;
 
     .login-form-item {
@@ -62,6 +61,7 @@
       }
     }
     .item-icon {
+      color: $white;
       font-size: 16px;
       line-height: 26px;
       position: absolute;
@@ -72,6 +72,7 @@
     }
     .item-input {
       border: none;
+      color: $white;
       background-color: transparent;
       padding: 0;
       box-shadow: none;
