@@ -14,7 +14,7 @@
   },
   "betterScripts": {
     "watch:server": {
-      "command": "rm -rf public && babel-node bin/server.js",
+      "command": "rm -rf public && webpack-dashboard -c blue -- nodemon --exec babel-node bin/server.js --ignore app --ignore public",
       "env": {
         "DEBUG": "app:*",
         "PORT": 3000,
@@ -66,12 +66,13 @@
     "better-npm-run": "0.0.15",
     "commander": "^2.9.0",
     "debug": "^2.6.3",
+    "ip": "^1.1.3",
     "eslint": "^3.10.0",
     "eslint-config-airbnb": "^13.0.0",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^2.2.3",
     "eslint-plugin-react": "^6.6.0",
-    "extract-text-webpack-plugin": "^2.0.0-beta.4",
+    "extract-text-webpack-plugin": "^2.1.0",
     "happypack": "^3.0.2",
     "html-webpack-plugin": "^2.24.1",
     "ignore-loader": "^0.1.2",
@@ -93,7 +94,9 @@
     "koa-static": "^3.0.0",
     "koa-webpack-dev-middleware": "^1.4.5",
     "koa-webpack-hot-middleware": "^1.0.3",
-    "webpack-dashboard": "^0.3.0"
+    "webpack-dashboard": "^0.3.0",
+    "open-browser-webpack-plugin": "0.0.5",
+    "nodemon": "^1.11.0"
   },
   "theme": {
     "@primary-color": "#1eb6f8",

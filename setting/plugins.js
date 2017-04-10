@@ -26,14 +26,14 @@ const basePlugins = [
     disable: false,
     allChunks: true,
   }),
-];
-
-const watchPlugins = [
   new HappyPack({
     id: 'babel',
     threads: 6,
     loaders: ['babel-loader'],
   }),
+];
+
+const watchPlugins = [
   new Visualizer({
     filename: './statistics.html',
   }),
@@ -41,11 +41,6 @@ const watchPlugins = [
 ];
 
 const buildPlugins = [
-  new HappyPack({
-    id: 'babel',
-    threads: 6,
-    loaders: ['babel-loader'],
-  }),
   new webpack.DefinePlugin({
     'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
   }),
