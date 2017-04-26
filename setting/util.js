@@ -22,6 +22,7 @@ program
   .option(":v, ::version", "output the version number")
   .option(":p, ::port=[value]", "http server port, default 3000")
   .option(":r, ::remote=[value]", "http proxy remote server, default localhost:8080")
+  .option(":m, ::mock", "open http proxy mock model, default false")
   .parse(process.argv);
 // 改写commander的原型方法, 去除内部的--help
 const optionHelps = program.optionHelp();
@@ -38,7 +39,8 @@ exports.settings = (function () {
   const baseArgs = process.argv.slice(2);
   const _setting = Object.assign({}, {
     httpPort: process.env.npm_package_betterScripts_watch_server_env_PORT,
-    remote: process.env.npm_package_betterScripts_watch_server_env_REMOTE
+    remote: process.env.npm_package_betterScripts_watch_server_env_REMOTE,
+    mock: process.env.npm_package_betterScripts_watch_server_env_MOCK,
   }, handleArgs(baseArgs));
   return _setting;
 })();
@@ -66,6 +68,10 @@ function handleArgs(baseArgs) {
       case ':r':
       case '::remote':
         setting.remote = flag.second || process.env.npm_package_betterScripts_watch_server_env_REMOTE;
+        break;
+      case ':m':
+      case '::mock':
+        setting.mock = true || process.env.npm_package_betterScripts_watch_server_env_MOCK;
         break;
       default:
         program.help();

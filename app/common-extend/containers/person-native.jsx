@@ -14,10 +14,6 @@ const mapDispatchToProps = (dispatch) => {
     onLogout() {
       dispatch(UserAction.logout());
     },
-    onUserTypeSwitch(type) {
-      Cookie.set('userType', type);
-      window.location.href = '/console';
-    },
   };
 };
 

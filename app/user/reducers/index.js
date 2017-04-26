@@ -10,7 +10,8 @@ export const searchUserList = createReducer(on => {
 export const loginUser = createReducer(on => {
   on(UserAction.login)
     .completed((state, action) => {
-      WebSocket.connect();
+      // WebSocket.connect();
+      window.location.href = '/console';      
       return new LoginUser(action.payload);
     });
   on(UserAction.logout)
@@ -30,10 +31,10 @@ export const loginUser = createReducer(on => {
   on(UserAction.getLogined)
     .completed((state, action) => {
       if (_.isEmpty(action.payload)) {
-        WebSocket.disconnect();
+        // WebSocket.disconnect();
         return {};
       }
-      WebSocket.connect();
+      // WebSocket.connect();
       return new LoginUser(action.payload);
     });
   on(UserAction.refreshLogined)

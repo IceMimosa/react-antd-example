@@ -5,18 +5,9 @@ import './person-native.scss';
 
 class PersonNative extends React.Component {
   render() {
-    const { loginUser, onLogout, onUserTypeSwitch } = this.props;
+    const { loginUser, onLogout } = this.props;
     const menu = (
       <Menu className='person-mean'>
-        {
-        loginUser.allowedTypes.includes('COMPANY_ADMIN') ?
-          <Menu.Item>
-            {
-            loginUser.realType === 'COMPANY_ADMIN' ? <a onClick={() => onUserTypeSwitch('DEVELOPER')}>开发者后台</a>
-            : <a onClick={() => onUserTypeSwitch('COMPANY_ADMIN')}>企业后台</a>
-          }
-          </Menu.Item> : null
-      }
         <Menu.Item>
           <a href='/console/users/profile/person'>个人设置</a>
         </Menu.Item>

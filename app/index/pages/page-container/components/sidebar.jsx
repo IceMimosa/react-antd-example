@@ -6,25 +6,9 @@ import './sidebar.scss';
 
 const { Item: MenuItem } = Menu;
 
-const menuMap = {
-  DEVELOPER: [
-    { icon: 'source', text: '数据采集', href: '/console/source/manage' },
-    { icon: 'analysis', text: '数据分析', href: '/console/analysis/edit' },
-    { icon: 'task', text: '任务管理', href: '/console/task/manage' },
-    // { icon: 'file', text: '文件管理', href: '/console/file' },
-    { icon: 'user', text: '用户数据', href: '/console/user-data' },
-    { icon: 'develop', text: '数据开发', href: '/console/data-develop' },
-    { icon: 'operation', text: '运营管理', href: '/console/operation-manage' },
-  ],
-  COMPANY_ADMIN: [
-    { icon: 'user', text: '用户管理', href: '/console/orgs/members-extend' },
-    { icon: 'power', text: '权限管理', href: '/console/power/manage' },
-  ],
-  SYS_ADMIN: [
+const menuMap = [
     { icon: 'user', text: '企业用户', href: '/console/users' },
-    { icon: 'user', text: '企业管理', href: '/console/orgs' },
-  ],
-};
+];
 
 class Sidebar extends React.Component {
   constructor(props) {
@@ -48,7 +32,7 @@ class Sidebar extends React.Component {
   }
   render() {
     const { loginUser } = this.props;
-    const menus = !loginUser.orgId ? [] : menuMap[loginUser.realType];
+    const menus = menuMap;
     const p = window._profile_ || 'terminus';
     const logoClass = p ? `logo logo-${p}` : 'logo';
     const flex = this.state.active

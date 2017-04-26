@@ -3,6 +3,23 @@ import { createAction, actionTypeCreatorWithNameSpace } from 'common/utils/actio
 
 const actionTypeCreator = actionTypeCreatorWithNameSpace('user');
 
+export const refreshLogined = createAction(actionTypeCreator('refreshLogined'), () => {
+  return agent.get('/api/users/current')
+    .then(response => response.body);
+});
+
+export const getLogined = createAction(actionTypeCreator('getLogined'), () => {
+  return agent.get('/api/users/current')
+    .then(response => response.body);
+});
+
+export const login = createAction(actionTypeCreator('login'), (loginInfo) => {
+  return agent.post('/api/users/login')
+    .type('form')
+    .send(loginInfo)
+    .then(response => response.body);
+});
+
 export const search = createAction(actionTypeCreator('search'), (query) => {
   return agent.get('/api/users/search')
     .query(query)
@@ -30,29 +47,12 @@ export const unlockUser = createAction(actionTypeCreator('userById'), (userId) =
   return agent.post(`/api/users/${userId}/unlock`);
 });
 
-export const login = createAction(actionTypeCreator('login'), (loginInfo) => {
-  return agent.post('/api/users/login')
-    .type('form')
-    .send(loginInfo)
-    .then(response => response.body);
-});
-
 export const logout = createAction(actionTypeCreator('logout'), () => {
   return agent.post('/api/users/logout')
     .then(true);
 });
 
 export const nativeLogout = createAction(actionTypeCreator('nativeLogout'));
-
-export const getLogined = createAction(actionTypeCreator('getLogined'), () => {
-  return agent.get('/api/users/current')
-    .then(response => response.body);
-});
-
-export const refreshLogined = createAction(actionTypeCreator('refreshLogined'), () => {
-  return agent.get('/api/users/current')
-    .then(response => response.body);
-});
 
 export const changePassword = createAction(actionTypeCreator('userById'), (password) => {
   return agent.post('/api/users/current/password')

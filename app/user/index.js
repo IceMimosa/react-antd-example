@@ -10,7 +10,6 @@ function getUserRouter() {
       },
     }, {
       path: 'users/profile',
-
       childRoutes: [
         {
           path: 'person',

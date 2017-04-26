@@ -8,6 +8,8 @@ import Koa from 'koa';
 import convert from 'koa-convert'; // 用于转换generator写法, 以支持Koa2.0
 import server from 'koa-static';
 import proxy from 'koa-proxy';
+import Router from 'koa-router';
+import KoaBody from 'koa-better-body';
 import historyApiFallback from 'koa-connect-history-api-fallback';
 import webpackDevMiddleware from 'koa-webpack-dev-middleware';
 import webpackHotMiddleware from 'koa-webpack-hot-middleware';
@@ -21,16 +23,26 @@ import _webpackConfig from '../webpack.config';
 // 获取基本配置
 const path = require('path');
 const app = new Koa();
+const router = new Router();
+const koaBody = KoaBody()
 const webpackConfig = _webpackConfig(null, process);
 const _ROOT_DIR_ = path.resolve(__dirname, '..');
 const settings = _util.settings;
 const port = settings.httpPort;
 
-// 启动api服务器
-app.use(convert(proxy({
-  host: `http://${settings.remote}`,
-  match: /^\/api\/.*/, // 拦截后台接口, 一般是 /api 开头
-})));
+// 启动api服务器, 获取mock服务
+if (settings.mock) {
+  require('../mock/users')(router)
+
+} else {
+  app.use(convert(proxy({
+    host: `http://${settings.remote}`,
+    match: /^\/api\/.*/, // 拦截后台接口, 一般是 /api 开头
+  })));
+}
+// 加载路由, 在加载静态资源之前
+app.use(convert(koaBody))
+app.use(router.routes()).use(router.allowedMethods());
 
 // 让 url 永远指向 index.jsx 方便 react-outer
 app.use(convert(historyApiFallback({

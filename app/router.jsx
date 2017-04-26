@@ -23,12 +23,10 @@ class AppRouter extends React.Component {
   }
   shouldComponentUpdate() {
     // 不需要重新渲染，如果触发重新渲染 react-router 有时候会报个 warning
-    return false;
+    return false
   }
 
   onConsoleEnter(nextState, replace) {
-    // refresh breadcrumb
-    // this.props.refreshBreadcrumb();
     // redirect to index if not login
     if (_.isEmpty(this.loginUser)) {
       replace({
@@ -40,48 +38,22 @@ class AppRouter extends React.Component {
   // console index redirect by user type
   onConsoleIndexEnter(nextState, replace) {
     const pathname = Cookie.get('lastPath');
-    if (this.loginUser.realType === 'SYS_ADMIN') {
-      replace({
-        pathname: pathname || '/console/users',
-      });
-    } else if (this.loginUser.realType === 'COMPANY_ADMIN') {
-      replace({
-        pathname: pathname || '/console/orgs/members-extend',
-      });
-    } else if (!this.loginUser.orgId) {
-      replace({
-        pathname: pathname || '/console/users/profile/org',
-      });
-    } else {
-      replace({
-        pathname: pathname || '/console/source/manage',
-      });
-    }
+    // 可以根据用户相关权限, 跳转到不用页面, 这里默认跳转到 users 模块
+    replace({
+      pathname: pathname || '/console/users',
+    });
     Cookie.remove('lastPath');
   }
 
   // check an route's auth
   onEnterAuthCheck(userType, nextState, replace) {
-    const types = typeof userType === 'string' ? [userType] : userType;
-    if (this.loginUser.realType && types.indexOf(this.loginUser.realType) === -1) {
-      replace({
-        pathname: '/console',
-      });
-    }
+    // 如果没有权限, 可以跳转到 `/console`
+    // ......
   }
 
-  onCompanyAdminEnter(nextState, replace) {
-    this.onEnterAuthCheck('COMPANY_ADMIN', nextState, replace);
-  }
-
+  // example: enter auth check  
   onSystemAdminEnter(nextState, replace) {
-    // this.onEnterAuthCheck('COMPANY_ADMIN', nextState, replace);
     this.onEnterAuthCheck('SYS_ADMIN', nextState, replace);
-  }
-
-  // 用户权限
-  onDeveloperMember(nextState, replace) {
-    this.onEnterAuthCheck('DEVELOPER', nextState, replace);
   }
 
   initChildRoutes() {

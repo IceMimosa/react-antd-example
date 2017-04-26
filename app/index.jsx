@@ -42,7 +42,7 @@ let logoutHandling = false;
 setStatusAction(401, () => {
   if (logoutHandling) return;
   logoutHandling = true;
-  Cookie.set('lastPath', window.location.pathname);
+  Cookie.set('lastPath', window.location.pathname + window.location.search);
   notification.warning({
     message: '未登录',
     description: '未登录，可能是用户信息已超时，请重新登录',
