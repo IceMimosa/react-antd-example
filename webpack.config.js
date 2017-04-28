@@ -3,7 +3,7 @@ const fs = require('fs');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const plugins = require('./setting/plugins');
 const getAlias = require('./setting/alias');
-const { noParse, vendor, pass } = require('./setting/noParse');
+const { noParse, vendor, pass, stats } = require('./setting/noParse');
 const { ignorePattern } = require('./setting/ignore');
 
 module.exports = (p, context) => {
@@ -93,5 +93,6 @@ module.exports = (p, context) => {
       extensions: ['.js', '.jsx', '.scss'],
     },
     plugins,
+    stats,
   };
 };

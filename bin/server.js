@@ -68,16 +68,6 @@ app.use(convert(webpackDevMiddleware(compiler, {
   hot: true,
   quiet: true, // 是否在 console 里面显示信息
   noInfo: true, // 是否在命令行中显示错误
-  stats: {
-    colors: true,
-    assets: false,  // 下面减少日志的设置不起效果, 日。 webpack-dashboard 0.0.3 bug, see https://github.com/FormidableLabs/webpack-dashboard/issues/163, 等待中新Tag。。。
-    version: false,
-    hash: false,
-    timings: false,
-    chunks: false,
-    chunkModules: false,
-    children: false
-  },
   historyApiFallback: true,
 })));
 // 启用热部署插件
