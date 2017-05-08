@@ -6,7 +6,6 @@ import Cookie from 'js-cookie';
 import LoginPage from 'index/pages/login';
 import OfficialContainer from 'index/pages/official';
 import PageContainer from 'index/pages/page-container';
-import Register from 'user/pages/register-account';
 
 import getUserRouter from 'user';
 
@@ -77,20 +76,6 @@ class AppRouter extends React.Component {
             onEnter: ::this.onConsoleIndexEnter,
           },
           childRoutes: ::this.initChildRoutes(),
-        },
-        {
-          path: 'register',
-          component: OfficialContainer,
-          childRoutes: [
-            {
-              path: 'developer',
-              component: Register,
-            },
-            {
-              path: 'org',
-              component: Register,
-            },
-          ],
         },
       ],
     };

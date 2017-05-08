@@ -20,15 +20,6 @@ const mapDispatchToProps = (dispatch) => {
       return dispatch(UserAction.create(user))
         .then(promiseFSA);
     },
-    onResetPassword(userId, password) {
-      return dispatch(UserAction.resetPassword(userId, password));
-    },
-    lockUser(user) {
-      return dispatch(UserAction.lockUser(user.id));
-    },
-    unlockUser(user) {
-      return dispatch(UserAction.unlockUser(user.id));
-    },
   };
 };
 

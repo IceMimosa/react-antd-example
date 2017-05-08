@@ -7,7 +7,7 @@ import './sidebar.scss';
 const { Item: MenuItem } = Menu;
 
 const menuMap = [
-    { icon: 'user', text: '企业用户', href: '/console/users' },
+    { icon: 'user', text: '用户模块', href: '/console/users' },
 ];
 
 class Sidebar extends React.Component {
@@ -24,12 +24,7 @@ class Sidebar extends React.Component {
       this.setState({ active: true });
     }
   }
-  clickFileManage(param) {
-    const { reloadFileList, onReloadFileList } = this.props;
-    if (param === '文件管理') {
-      onReloadFileList(reloadFileList);
-    }
-  }
+
   render() {
     const { loginUser } = this.props;
     const menus = menuMap;
@@ -57,7 +52,7 @@ class Sidebar extends React.Component {
             {_.filter(menus, (menu) => { return menu.icon !== 'registries' || loginUser.orgId != null; }).map(menu => {
               return (
                 <MenuItem className='sidebar-menu-item' key={menu.text}>
-                  <Link to={menu.href} onClick={() => this.clickFileManage(menu.text)}>
+                    <Link to={menu.href} >
                     <i className={`sidebar-icon ${menu.icon}`}></i>
                     {
                       this.state.active

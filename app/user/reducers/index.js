@@ -47,17 +47,7 @@ export const loginUser = createReducer(on => {
     });
 }, {});
 
-
-export const suggestUser = createReducer(on => {
-  on(UserAction.suggest);
-  on(UserAction.cleanSuggest)
-    .completed(() => []);
-}, []);
-
 export const userById = createReducer(on => {
   on(UserAction.getUserInfo);
 }, {});
 
-export const siderActiveKey = createReducer(on => {
-  on(UserAction.changeSiderActiveKey);
-}, '项目管理');
