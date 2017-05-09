@@ -3,10 +3,6 @@ import { Form, Input, Button } from 'antd';
 import { ImageUpload, TopTabs } from 'common';
 import { notify, compTab } from 'common/utils';
 
-import ChangePhoneModal from '../containers/user-change/phone-modal';
-import ChangeEmailModal from '../containers/user-change/email-modal';
-import ChangePasswordModal from '../containers/user-change/password-modal';
-
 import './user-setting-basic.scss';
 
 const FormItem = Form.Item;
@@ -16,14 +12,8 @@ class UserSettingBasic extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      submiting: false,
       avatar: props.userProfile.avatar,
     };
-  }
-
-  handleReset(e) {
-    e.preventDefault();
-    this.props.form.resetFields();
   }
 
   handleSubmit(e) {
@@ -32,7 +22,7 @@ class UserSettingBasic extends React.Component {
       if (!!errors) {
         return;
       }
-      this.props.onUpdataProfile(values)
+      this.props.onUpdateProfile(values)
       .then(() => {
         notify('success', '修改成功');
       });
@@ -68,25 +58,19 @@ class UserSettingBasic extends React.Component {
       wrapperCol: { span: 8, offset: 8 },
     };
 
-    // to set email input disabled --inactive
-    // const emailExist = userProfile.email ? true : false;
-
     return (
       <div>
         <Form className='user-setting-basic' horizontal>
           <FormItem required {...layout} label='手机'>
             <span>{userProfile.mobile}</span>
-            <a className='pull-right' onClick={() => this.refs.changePhoneModal.getWrappedInstance().show()}>更换手机</a>
           </FormItem>
 
           <FormItem {...layout} label='邮箱' className='emailItem'>
             <span>{userProfile.email || '无'}</span>
-            <a className='pull-right' onClick={() => this.refs.changeEmailModal.getWrappedInstance().show()}>更换邮箱</a>
           </FormItem>
 
           <FormItem {...layout} label='密码' className='passwdItem'>
             <span>*******</span>
-            <a className='pull-right' onClick={() => this.refs.changePasswordModal.getWrappedInstance().show()}>更改密码</a>
           </FormItem>
 
           <FormItem required {...layout} label='昵称'>
@@ -101,9 +85,6 @@ class UserSettingBasic extends React.Component {
             <Button className='btn-save' type='primary' onClick={::this.handleSubmit}>保存</Button>
           </FormItem>
         </Form>
-        <ChangeEmailModal ref='changeEmailModal' />
-        <ChangePhoneModal ref='changePhoneModal' />
-        <ChangePasswordModal ref='changePasswordModal' />
       </div>
     );
   }

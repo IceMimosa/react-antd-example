@@ -122,44 +122,9 @@ export const commonRules = [
 export const envDefault = [{ envType: 'PRO' }, { envType: 'PRE' }, { envType: 'DEV' }, { envType: 'TEST' }];
 
 export const compTab = {
-  project: [
-    { title: '环境部署', name: 'deploy', env: true },
-    { title: '运行单元', name: 'rununits', env: true },
-    { title: '公共资源', name: 'resources', env: true },
-    { title: '监控信息', name: 'apm', env: true },
-    { title: '应用列表', name: 'apps' },
-    { title: '项目日志', name: 'logs' },
-    { title: '项目组', name: 'members' },
-    { title: '项目设置', name: 'settings' },
-  ],
-  machine: [
-    { title: '机器管理', name: 'manager', env: true },
-    { title: '来源管理', name: 'sources' },
-    { title: '机器分组', name: 'groups' },
-  ],
-  alarm: [
-    { title: '告警规则', name: 'rules' },
-    { title: '告警组', name: 'groups' },
-  ],
-  service: [
-    { title: '服务治理', name: 'registries', env: true },
-    { title: 'AppKey', name: 'appKeys' },
-    { title: '服务标签', name: 'serviceTags' },
-  ],
   info: [
     { title: '个人信息', name: 'person' },
     { title: '企业信息', name: 'org' },
-    { title: 'OPENAPI', name: 'api' },
-  ],
-  org: [
-    { title: '代码仓库', name: 'code' },
-    { title: 'Dockerhub', name: 'docker' },
-    { title: 'Builder管理', name: 'builders' },
-    { title: 'CI配置', name: 'ci' },
-  ],
-  message: [
-    { title: '我的消息', name: 'USER' },
-    { title: '系统消息', name: 'GLOBAL' },
   ],
 };
 

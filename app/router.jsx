@@ -4,7 +4,6 @@ import { Router, browserHistory } from 'react-router';
 import Cookie from 'js-cookie';
 
 import LoginPage from 'index/pages/login';
-import OfficialContainer from 'index/pages/official';
 import PageContainer from 'index/pages/page-container';
 
 import getUserRouter from 'user';

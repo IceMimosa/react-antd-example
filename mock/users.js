@@ -86,4 +86,15 @@ module.exports = (router) => {
       list: users.slice((pageNo - 1) * pageSize, pageNo * pageSize)
     })
   })
+  
+  router.put('/api/users/current/profile', (ctx, next) => {
+    const nick = Fields.get(ctx, "nick")
+    for (const user of users) {
+      if (user.id === currentUser.id) {
+        user.nick = nick
+        currentUser = user
+      }
+    }
+    Response.ok(ctx, null)
+  })
 }

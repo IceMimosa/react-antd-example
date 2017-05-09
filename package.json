@@ -8,6 +8,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch:server": "better-npm-run watch:server",
+    "debug": "rm -rf public && better-npm-run debug",
     "watch": "rm -rf public && webpack-dashboard -c blue -- webpack --progress --color -w -d",
     "analysis": "webpack --progress -p --json --profile > analysis.json",
     "build": "rm -rf public && cross-env NODE_ENV=production webpack --progress --color -p"
@@ -15,6 +16,15 @@
   "betterScripts": {
     "watch:server": {
       "command": "rm -rf public && webpack-dashboard -c blue -- nodemon --exec babel-node bin/server.js --ignore app --ignore public",
+      "env": {
+        "DEBUG": "app:*",
+        "PORT": 3000,
+        "REMOTE": "localhost:8080",
+        "MOCK": false
+      }
+    },
+    "debug": {
+      "command": "rm -rf public && babel-node --inspect=5858 bin/server.js",
       "env": {
         "DEBUG": "app:*",
         "PORT": 3000,

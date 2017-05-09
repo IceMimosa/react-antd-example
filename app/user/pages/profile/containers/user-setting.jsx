@@ -8,7 +8,7 @@ const mapDispatchToProps = dispatch => {
     getProfile() {
       return dispatch(UserAction.getCurrentProfile());
     },
-    onUpdataProfile(userProfile) {
+    onUpdateProfile(userProfile) {
       return dispatch(UserAction.putProfile(userProfile));
     },
   };

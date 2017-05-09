@@ -1,6 +1,5 @@
 import UserSettingBasic from '../containers/user-setting-basic';
 import UserSettingOrg from '../containers/user-setting-org';
-import UserSettingOpenAPI from '../containers/user-setting-openAPI';
 import { Panel } from 'common';
 
 import './user-setting.scss';
@@ -18,9 +17,6 @@ const UserSetting = () => {
       </Panel>
       <Panel title='企业信息'>
         <UserSettingOrg/>
-      </Panel>
-      <Panel title='OpenAPI'>
-        <UserSettingOpenAPI/>
       </Panel>
     </div>
   );

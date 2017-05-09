@@ -33,12 +33,6 @@ export const logout = createAction(actionTypeCreator('logout'), () => {
 
 export const nativeLogout = createAction(actionTypeCreator('nativeLogout'));
 
-export const changePassword = createAction(actionTypeCreator('userById'), (password) => {
-  return agent.post('/api/users/current/password')
-    .type('form')
-    .send(password);
-});
-
 export const getUserInfo = createAction(actionTypeCreator('userById'), (userId) => {
   return agent.get(`/api/users/${userId}`)
     .then(response => response.body);
@@ -46,5 +40,12 @@ export const getUserInfo = createAction(actionTypeCreator('userById'), (userId) 
 
 export const getCurrentUserInfo = createAction(actionTypeCreator('getCurrentUserInfo'), () => {
   return agent.get('/api/users/current')
+    .then(response => response.body);
+});
+
+export const putProfile = createAction(actionTypeCreator('putProfile'), (userProfile) => {
+  return agent.put('/api/users/current/profile')
+    .type('form')
+    .send(userProfile)
     .then(response => response.body);
 });

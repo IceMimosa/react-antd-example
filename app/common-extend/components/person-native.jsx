@@ -19,13 +19,6 @@ class PersonNative extends React.Component {
     return (
       <div className='person-native-box'>
         <div className='person-native'>
-          <div className='info'>
-            <Badge>
-              <a href='/console/message/USER'>
-                <CustomIcon type='liuyanfill' className='message native-tab' />
-              </a>
-            </Badge>
-          </div>
           <Dropdown overlay={menu}>
             <div className='avator'>
               <ImgHolder rect='30x30' src={loginUser.avatar}></ImgHolder>

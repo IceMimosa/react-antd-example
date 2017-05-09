@@ -69,7 +69,7 @@ class LoginBox extends React.Component {
         </Tabs>
         <LoginForm ref='form' enterLogin={::this.onLoginClick} loginType={loginType}/>
         <Button className='login-button' onClick={::this.onLoginClick}>登录</Button>
-        <Button className='register-button' onClick={::this.onLoginClick}>创建我的Abstergo账号</Button>
+        {/*<Button className='register-button' onClick={::this.onLoginClick}>创建我的Abstergo账号</Button>*/ }
       </div>
     );
   }

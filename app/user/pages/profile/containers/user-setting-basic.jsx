@@ -1,6 +1,6 @@
 import * as ReactRedux from 'react-redux';
 import * as UserAction from 'user/actions';
-import PureUserSettingbasic from '../components/user-setting-basic';
+import PureUserSettingBasic from '../components/user-setting-basic';
 
 const mapStateToProps = state => {
   return {
@@ -10,11 +10,11 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    onUpdataProfile(userProfile) {
+    onUpdateProfile(userProfile) {
       return dispatch(UserAction.putProfile(userProfile))
         .then(() => dispatch(UserAction.getCurrentUserInfo()));
     },
   };
 };
 
-export default ReactRedux.connect(mapStateToProps, mapDispatchToProps)(PureUserSettingbasic);
+export default ReactRedux.connect(mapStateToProps, mapDispatchToProps)(PureUserSettingBasic);

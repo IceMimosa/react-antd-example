@@ -11,7 +11,8 @@ exports.Fields = {
   },
   getQuery: (ctx, name) => {
     // https://github.com/tunnckoCore/koa-better-body/issues/77
-    return ctx.querystring[name] || qs.parse(ctx.querystring)[name]
+    // 发现 request.query 也可以获取
+    return ctx.request.query[name] || ctx.querystring[name] || qs.parse(ctx.querystring)[name]
   },
 }
 

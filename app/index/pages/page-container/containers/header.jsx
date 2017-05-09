@@ -19,10 +19,6 @@ const mapDispatchToProps = (dispatch) => {
     onProfile() {
       browserHistory.push('/profile');
     },
-    onUserTypeSwitch(type) {
-      Cookie.set('userType', type);
-      window.location.href = '/console';
-    },
   };
 };
 

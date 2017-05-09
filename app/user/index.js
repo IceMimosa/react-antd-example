@@ -23,12 +23,6 @@ function getUserRouter() {
             System.import('user/pages/profile/containers/user-setting-org').then((module) => cb(null, module.default));
           },
         },
-        {
-          path: 'api',
-          getComponent(location, cb) {
-            System.import('user/pages/profile/containers/user-setting-openAPI').then((module) => cb(null, module.default));
-          },
-        },
       ],
     },
   ];
