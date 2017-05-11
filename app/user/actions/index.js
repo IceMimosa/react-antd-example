@@ -33,13 +33,15 @@ export const logout = createAction(actionTypeCreator('logout'), () => {
 
 export const nativeLogout = createAction(actionTypeCreator('nativeLogout'));
 
-export const getUserInfo = createAction(actionTypeCreator('userById'), (userId) => {
-  return agent.get(`/api/users/${userId}`)
+export const getCurrentUserInfo = createAction(actionTypeCreator('getCurrentUserInfo'), () => {
+  return agent.get('/api/users/current')
     .then(response => response.body);
 });
 
-export const getCurrentUserInfo = createAction(actionTypeCreator('getCurrentUserInfo'), () => {
-  return agent.get('/api/users/current')
+export const create = createAction(actionTypeCreator('userById'), (user) => {
+  return agent.post('/api/users')
+    .type('form')
+    .send(user)
     .then(response => response.body);
 });
 

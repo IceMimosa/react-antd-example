@@ -46,8 +46,3 @@ export const loginUser = createReducer(on => {
       return new LoginUser(action.payload);
     });
 }, {});
-
-export const userById = createReducer(on => {
-  on(UserAction.getUserInfo);
-}, {});
-

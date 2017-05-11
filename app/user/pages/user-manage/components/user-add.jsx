@@ -4,6 +4,7 @@ import * as React from 'react';
 import { notify } from 'common/utils';
 
 class UserAddModalForm extends React.Component {
+
   checkMobile(rule, value, callback) {
     if (/^1[\d]{10}$/.test(value)) {
       callback();
@@ -29,13 +30,18 @@ class UserAddModalForm extends React.Component {
       ],
     });
 
-    // TODO 密码应该提供初始化,而不是设置
     const passwordField = getFieldDecorator('password', {
       rules: [
         { required: true, min: 8, message: '请填写用户初始化密码, 至少为8位' },
       ],
     });
-    const orgField = getFieldDecorator('orgId');
+
+    const emailField = getFieldDecorator('email', {
+      rules: [
+        { required: true, message: '请填写邮箱地址' },
+      ],
+    });
+    
     const layout = {
       labelCol: { span: 6 },
       wrapperCol: { span: 18 },
@@ -51,6 +57,10 @@ class UserAddModalForm extends React.Component {
         <Form.Item {...layout} label='初始化密码'>
           {passwordField(<Input placeholder='输入用户初始化密码'/>)}
         </Form.Item>
+        <Form.Item {...layout} label='初始化邮箱'>
+          {emailField(<Input placeholder='输入用户初始化邮箱'/>)}
+        </Form.Item>
+
       </Form>
     );
   }

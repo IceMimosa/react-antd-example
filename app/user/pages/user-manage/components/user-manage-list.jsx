@@ -2,7 +2,6 @@ import { ImgHolder, Icon as CustomIcon, TopTabs } from 'common';
 import { Button, Table } from 'antd';
 import * as React from 'react';
 import UserAddModal from './user-add';
-import UserResetPasswordModal from './user-reset-password';
 
 import './user-manage-list.scss';
 
