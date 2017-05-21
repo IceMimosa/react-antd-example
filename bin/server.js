@@ -9,6 +9,7 @@ import convert from 'koa-convert'; // 用于转换generator写法, 以支持Koa2
 import server from 'koa-static';
 import proxy from 'koa-proxy';
 import Router from 'koa-router';
+import bodyParser from 'koa-body-parser';
 import KoaBody from 'koa-better-body';
 import historyApiFallback from 'koa-connect-history-api-fallback';
 import webpackDevMiddleware from 'koa-webpack-dev-middleware';
@@ -31,10 +32,11 @@ const settings = _util.settings;
 const port = settings.httpPort;
 
 // 启动api服务器, 获取mock服务
-if (settings.mock) {
+if (settings.mock && settings.mock == true) {
   require('../mock/users')(router)
 
 } else {
+  app.use(bodyParser());
   app.use(convert(proxy({
     host: `http://${settings.remote}`,
     match: /^\/api\/.*/, // 拦截后台接口, 一般是 /api 开头
@@ -44,7 +46,7 @@ if (settings.mock) {
 app.use(convert(koaBody))
 app.use(router.routes()).use(router.allowedMethods());
 
-// 让 url 永远指向 index.jsx 方便 react-outer
+// 让 url 永远指向 index.jsx 方便 react-router
 app.use(convert(historyApiFallback({
   verbose: false, // 取消日志消息
 })));

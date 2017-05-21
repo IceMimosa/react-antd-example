@@ -1,14 +1,52 @@
-## Workflow
+## 简介
+主要基于 [react](https://github.com/facebook/react) 和 [antd](https://github.com/ant-design/ant-design) 的一个demo项目。
 
-### Requirements
-
+## 准备环境
 - Node: use NVM
+- Install: [yarn](https://github.com/yarnpkg) 或者 npm
 
-### How to start
+## 运行示例
+该demo中包含多种运行方式，以方便开发，运行方式如下：
 
-- `rm -rf node_modules`
-- `npm install`
-- `npm run build / watch`
+- 使用 [Koa2](https://github.com/koajs/koa) 开启 `mock` 环境进行测试，拦截 `/api/*` 的链接
+- 使用 [koa-proxy](https://github.com/popomore/koa-proxy) 将 `/api/*` 的链接转发至后台服务器
+- 使用 `nginx` 将 `/api/*` 的链接进行转发
+- 生产环境打包， 同样需要 `nginx` 的转发
+
+### 方式一
+不需要对后台（Java等环境）进行联调，使用 `Koa` 进行本地的开发和测试，所有的 **mock数据** 和 **路由数据** 都位于项目的 `mock目录` 中。 比如 `mock/users.js` 的用户测试数据。
+
+```
+-- 使用步骤，进入demo目录
+
+1. rm -rf node_modules
+2. yarn 或者 npm install
+3. npm run watch:server :m
+```
+
+打开浏览器访问 `http://localhost:3000/`，输入账号密码：`18888888888` / `123456`
+
+这里默认开启的 `3000端口`，可以使用参数 `:p` 或者 `::port` 参数， 比如执行 `npm run watch:server :m :p=3001`
+
+### 方式二
+取消本地的mock环境，将 `/api/*` 转发至后台。这里需要启动后台环境（如Java工程等）。
+
+```
+-- 使用步骤，进入demo目录
+
+1. rm -rf node_modules
+2. yarn 或者 npm install
+3. npm run watch:server
+```
+
+打开浏览器访问 `http://localhost:3000/`，账号密码由后台提供。
+
+同样这里默认开启的 `3000端口`，可以使用参数 `:p` 或者 `::port` 参数进行修改。
+转发的地址默认是 `localhost:8080`，可以使用参数 `:r` 或者 `::remote` 参数进行修改，如 `::r=localhost:8089`
+
+### 方式三
+
+
 
 ## Redux Actions and Reducers
 
@@ -78,3 +116,5 @@
   两种都可以省略，默认是 completed: `(state, action) => action.payload` ，failed: `(state, action) => console.log(action.payload)` 。
 
 - 通过 `common/utils/action` 里的 `invalidateCache` 方法来手动失效 cache ，`getFetchStatus` 方法来获取某个 fetch processing 状态
+
+
