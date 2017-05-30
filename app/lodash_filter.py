@@ -57,7 +57,6 @@ def lodashFilter(pwd):
 if __name__ == '__main__':
   # result = open('result.txt', 'w')
   pwd = os.getcwd()
-  nodePath = pwd + '/../node_modules/@terminus-paas-ui'
   watermarkPath = pwd + '/../node_modules/react-watermark'
   lodashFilter(pwd)
   lodashFilter(nodePath)

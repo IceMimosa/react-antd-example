@@ -40,6 +40,8 @@ if (settings.mock && settings.mock == true) {
   app.use(convert(proxy({
     host: `http://${settings.remote}`,
     match: /^\/api\/.*/, // 拦截后台接口, 一般是 /api 开头
+    requestOptions: {
+    }
   })));
 }
 // 加载路由, 在加载静态资源之前

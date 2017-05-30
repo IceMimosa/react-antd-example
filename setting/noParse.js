@@ -23,7 +23,8 @@ const baseStats = {
   timings: false,
   chunks: false,
   chunkModules: false,
-  children: false
+  children: false,
+  error: true
 };
 
 const noParse = baseNoParse;
