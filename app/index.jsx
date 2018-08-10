@@ -13,7 +13,7 @@ import UserCreator from 'user/creators';
 import AppRouter from './router';
 import reducers from './reducers';
 
-// import { fetchMiddleware } from 'common/utils/action';
+import { fetchMiddleware } from 'common/utils/action';
 // import * as UserAction from 'user/actions';
 import { setStatusAction } from './agent';
 import { init as wsHandlerInit } from './ws-handlers';
@@ -41,7 +41,7 @@ window._profile_ = 'terminus';
 const store = Redux.createStore(
   Redux.combineReducers({ ...reducers, ...connector.getReducers() }),
   Redux.compose(
-    Redux.applyMiddleware(ReduxCreator.fetchStatusMiddleware, ReduxPromiseMiddleware),
+    Redux.applyMiddleware(fetchMiddleware, ReduxCreator.fetchStatusMiddleware, ReduxPromiseMiddleware),
     window.devToolsExtension ? window.devToolsExtension() : f => f
   )
 );
