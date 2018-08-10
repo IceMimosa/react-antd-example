@@ -150,7 +150,11 @@ server {
 ## 模块开发
 例子可以参考项目中的user模块。
 
-### 创建 Actions
+> 创建 creators
+
+参考：[redux-creators](https://github.com/IceMimosa/redux-creator)
+
+### 创建 Actions (废弃)
 每个模块需要创建一个action文件
 
 * 导入所需要的方法
@@ -175,7 +179,7 @@ export const myMethod = createAction(actionTypeCreator('myMethod'), (params) => 
 ## someMetaInfo: 其他一些配置，比如是否获取异步的状态，是否缓存等等。如 `{fetch: {processing: true}`
 ```
 
-### 创建 Reducers
+### 创建 Reducers (废弃)
 每个模块需要创建一个reducer文件，然后需要在 `app/reducers.js` 中进行注册。
 
 * 导入所需要的方法
