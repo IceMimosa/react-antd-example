@@ -1,12 +1,13 @@
 import { getFetchStatus, promiseFSA } from 'common/utils/action';
 import * as ReactRedux from 'react-redux';
-import * as UserAction from 'user/actions';
+// import * as UserAction from 'user/actions';
+import UserCreator from 'user/creators';
 import PureUserManageList from '../components/user-manage-list';
 
 
 const mapStateToProps = (state) => {
   return {
-    isFetching: getFetchStatus(state, UserAction.search),
+    isFetching: getFetchStatus(state, UserCreator.search),
     users: state.searchUserList,
   };
 };
@@ -14,10 +15,10 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     onSearchSubmit(query) {
-      return dispatch(UserAction.search(query));
+      return dispatch(UserCreator.search(query));
     },
     onCreateUser(user) {
-      return dispatch(UserAction.create(user))
+      return dispatch(UserCreator.create(user))
         .then(promiseFSA);
     },
   };

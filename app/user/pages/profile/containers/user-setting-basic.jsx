@@ -1,18 +1,19 @@
 import * as ReactRedux from 'react-redux';
-import * as UserAction from 'user/actions';
+// import * as UserAction from 'user/actions';
+import UserCreator from 'user/creators';
 import PureUserSettingBasic from '../components/user-setting-basic';
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     userProfile: state.loginUser,
   };
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
     onUpdateProfile(userProfile) {
-      return dispatch(UserAction.putProfile(userProfile))
-        .then(() => dispatch(UserAction.getCurrentUserInfo()));
+      return dispatch(UserCreator.putProfile(userProfile))
+        .then(() => dispatch(UserCreator.getCurrentUserInfo()));
     },
   };
 };

@@ -1,15 +1,16 @@
 import * as React from 'react';
 import * as ReactRedux from 'react-redux';
-import * as UserAction from 'user/actions';
+// import * as UserAction from 'user/actions';
+import UserCreator from 'user/creators';
 import PureUserSettingForm from '../components/user-setting';
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
     getProfile() {
-      return dispatch(UserAction.getCurrentProfile());
+      return dispatch(UserCreator.getCurrentProfile());
     },
     onUpdateProfile(userProfile) {
-      return dispatch(UserAction.putProfile(userProfile));
+      return dispatch(UserCreator.putProfile(userProfile));
     },
   };
 };

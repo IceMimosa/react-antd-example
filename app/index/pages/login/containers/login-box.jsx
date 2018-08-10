@@ -1,5 +1,6 @@
 import * as ReactRedux from 'react-redux';
-import * as UserAction from 'user/actions';
+// import * as UserAction from 'user/actions';
+import UserCreator from 'user/creators';
 import PureLoginBox from '../components/login-box';
 
 const mapStateToProps = (state) => {
@@ -11,10 +12,10 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     onLoginSubmit(params) {
-      dispatch(UserAction.login(params));
+      dispatch(UserCreator.login(params));
     },
     onLogout() {
-      dispatch(UserAction.logout());
+      dispatch(UserCreator.logout());
     },
   };
 };

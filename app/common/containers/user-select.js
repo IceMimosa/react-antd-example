@@ -1,10 +1,11 @@
 import * as ReactRedux from 'react-redux';
-import * as UserAction from 'user/actions';
+// import * as UserAction from 'user/actions';
+import UserCreator from 'user/creators';
 import Suggestion from '../components/suggestion';
 
 const mapStateToProps = (state) => {
   return {
-    options: state.suggestUser.map(user => {
+    options: state.suggestUser.map((user) => {
       const text = `${user.nick}(${user.mobile})`;
       return {
         value: user.id.toString(),
@@ -18,7 +19,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     onSuggest: (value) => {
-      return dispatch(UserAction.suggest(value));
+      return dispatch(UserCreator.suggest(value));
     },
   };
 };

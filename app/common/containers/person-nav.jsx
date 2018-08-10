@@ -1,5 +1,6 @@
 import * as ReactRedux from 'react-redux';
-import * as UserAction from 'user/actions';
+// import * as UserAction from 'user/actions';
+import UserCreator from 'user/creators';
 
 import Cookie from 'js-cookie';
 import PersonNav from '../components/person-nav';
@@ -14,7 +15,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     onLogout() {
-      dispatch(UserAction.logout());
+      dispatch(UserCreator.logout());
     },
   };
 };

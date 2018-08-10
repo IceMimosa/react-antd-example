@@ -58,7 +58,8 @@
     "stompjs": "^2.3.3",
     "superagent": "^2.3.0",
     "superagent-use": "^0.1.0",
-    "title-notify": "^1.0.12"
+    "title-notify": "^1.0.12",
+    "redux-all-creator": "^0.0.3"
   },
   "devDependencies": {
     "autoprefixer": "^6.5.3",

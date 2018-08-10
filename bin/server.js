@@ -25,23 +25,22 @@ import _webpackConfig from '../webpack.config';
 const path = require('path');
 const app = new Koa();
 const router = new Router();
-const koaBody = KoaBody()
+const koaBody = KoaBody();
 const webpackConfig = _webpackConfig(null, process);
 const _ROOT_DIR_ = path.resolve(__dirname, '..');
 const settings = _util.settings;
 const port = settings.httpPort;
 
 // 启动api服务器, 获取mock服务
-if (settings.mock && settings.mock == true) {
-  require('../mock/users')(router)
+if (settings.mock && settings.mock === true) {
+  require('../mock/users')(router);
 
 } else {
   app.use(bodyParser());
   app.use(convert(proxy({
     host: `http://${settings.remote}`,
     match: /^\/api\/.*/, // 拦截后台接口, 一般是 /api 开头
-    requestOptions: {
-    }
+    requestOptions: { },
   })));
 }
 // 加载路由, 在加载静态资源之前

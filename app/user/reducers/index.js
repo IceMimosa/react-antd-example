@@ -11,7 +11,7 @@ export const loginUser = createReducer(on => {
   on(UserAction.login)
     .completed((state, action) => {
       // WebSocket.connect();
-      window.location.href = '/console';      
+      window.location.href = '/console';
       return new LoginUser(action.payload);
     });
   on(UserAction.logout)

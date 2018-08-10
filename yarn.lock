@@ -3772,6 +3772,10 @@ lodash.camelcase@^3.0.1:
   dependencies:
     lodash._createcompounder "^3.0.0"
 
+lodash.camelcase@^4.3.0:
+  version "4.3.0"
+  resolved "http://registry.npm.taobao.org/lodash.camelcase/download/lodash.camelcase-4.3.0.tgz#b28aa6288a2b9fc651035c7711f65ab6190331a6"
+
 lodash.clonedeep@^4.3.2:
   version "4.5.0"
   resolved "http://registry.npm.taobao.org/lodash.clonedeep/download/lodash.clonedeep-4.5.0.tgz#e23f3f9c4f8fbdde872529c1071857a086e5ccef"
@@ -3779,6 +3783,10 @@ lodash.clonedeep@^4.3.2:
 lodash.cond@^4.3.0:
   version "4.5.2"
   resolved "http://registry.npm.taobao.org/lodash.cond/download/lodash.cond-4.5.2.tgz#f471a1da486be60f6ab955d17115523dd1d255d5"
+
+lodash.curry@^4.1.1:
+  version "4.1.1"
+  resolved "http://registry.npm.taobao.org/lodash.curry/download/lodash.curry-4.1.1.tgz#248e36072ede906501d75966200a86dab8b23170"
 
 lodash.debounce@^4.0.0, lodash.debounce@^4.0.8:
   version "4.0.8"
@@ -5561,6 +5569,21 @@ redux-actions@^0.13.0:
   dependencies:
     lodash "^4.13.1"
     reduce-reducers "^0.1.0"
+
+redux-actions@^2.4.0:
+  version "2.6.1"
+  resolved "http://registry.npm.taobao.org/redux-actions/download/redux-actions-2.6.1.tgz#42c06e94739fbe6db35db3605abb105bdb3724d8"
+  dependencies:
+    invariant "^2.2.1"
+    lodash.camelcase "^4.3.0"
+    lodash.curry "^4.1.1"
+    reduce-reducers "^0.1.0"
+
+redux-all-creator@^0.0.3:
+  version "0.0.3"
+  resolved "http://registry.npm.taobao.org/redux-all-creator/download/redux-all-creator-0.0.3.tgz#dd9cb1a3a4d465f7c99fa4a0dec86591e41651b7"
+  dependencies:
+    redux-actions "^2.4.0"
 
 redux-promise@^0.5.3:
   version "0.5.3"
